@@ -3,7 +3,8 @@ FROM openjdk:17-alpine
 ENV SPRING_PROFILES_ACTIVE=prod
 ENV PORT=8080
 
-#Creacion de un usuario no root para la ejecucion del conteneodr
+#Creacion de un usuario no root para la ejecucion del contenedor
+RUN apk add --no-cache shadow
 RUN groupadd -r spring && useradd -r -g spring spring
 USER spring:spring
 
