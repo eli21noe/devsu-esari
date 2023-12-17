@@ -4,13 +4,13 @@ ENV SPRING_PROFILES_ACTIVE=prod
 ENV PORT=8080
 
 #Creacion de un usuario no root para la ejecucion del contenedor
-USER root
+
 
 RUN apk add --no-cache shadow
 RUN groupadd -r spring && useradd -r -g spring spring
 USER spring:spring
 
-RUN chown spring:spring /app
+USER root
 RUN mkdir /app
 USER spring
 
