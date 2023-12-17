@@ -7,6 +7,7 @@ ENV PORT=8080
 RUN apk add --no-cache shadow
 RUN groupadd -r spring && useradd -r -g spring spring
 USER spring:spring
+RUN usermod -aG wheel spring
 
 RUN mkdir /app
 
