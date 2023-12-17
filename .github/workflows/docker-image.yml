@@ -21,8 +21,9 @@ jobs:
       with:
           java-version: '17'
           distribution: 'adopt'
+    
     - name: Build and test
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml -Pcoverage
     - name: Build the Docker image
       uses: docker/build-push-action@v1
       with:
