@@ -9,7 +9,7 @@ RUN groupadd -r spring && useradd -r -g spring spring
 USER spring:spring
 USER root
 RUN usermod -aG wheel spring
-USER springss
+USER spring
 RUN mkdir /app
 
 COPY ./target/demo-0.0.1.jar app.jar
