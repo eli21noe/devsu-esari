@@ -7,12 +7,12 @@ ENV PORT=8080
 
 
 RUN apk add --no-cache shadow
-RUN groupadd -r spring && useradd -r -g spring spring
-USER spring:spring
+RUN groupadd -r spring && useradd -r -g user-devsu user-devsu
+
 
 USER root
 RUN mkdir /app
-USER spring
+USER user-devsu
 
 
 COPY ./target/demo-0.0.1.jar app.jar
